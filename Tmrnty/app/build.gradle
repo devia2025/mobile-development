@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.official.tmrnty'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.official.tmrnty"
+        minSdk 26
+        targetSdk 32
+        versionCode 10
+        versionName "10.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("./keystore/tmrnty.jks")
+            storePassword "tmrnty_D2308743"
+            keyAlias "tmrnty_Devs87401"
+            keyPassword "tmrnty_D2308743"
+        } }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'com.android.volley:volley:1.2.1' //http
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //implementation 'com.linsea:universalvideoview:1.1.0@aar'  /// video player...
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    //implementation 'com.google.android.gms:play-services-ads:20.6.0' /// ...
+    // glide image dependency
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0'
+}

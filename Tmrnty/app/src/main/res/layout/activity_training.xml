@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Extra.Training"
+    android:background="@xml/welcome_bg">
+
+
+    <RelativeLayout
+        android:id="@+id/rellay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@xml/grad"
+        android:paddingBottom="5dp">
+
+        <RelativeLayout
+            android:id="@+id/imgUser"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_below="@+id/back_assess"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/border_curve2">
+
+
+            <ImageView
+                android:id="@+id/Training_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/img" />
+
+            <!--            <FrameLayout-->
+            <!--                android:id="@+id/video_article_frame"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_marginLeft="9dp"-->
+            <!--                android:layout_marginTop="9dp"-->
+            <!--                android:layout_marginRight="9dp"-->
+            <!--                android:layout_marginBottom="9dp"-->
+            <!--                android:visibility="gone">-->
+
+            <!--                <com.official.tmrnty.More.FullScreenVideoView-->
+            <!--                    android:id="@+id/video_article"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent" />-->
+            <!--            </FrameLayout>-->
+
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/previous_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgUser"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/Back_Cam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="Back_Cam"
+                        android:src="@drawable/prev_que"></ImageView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/Cam_txt"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="CAM 1"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/Next_Cam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="Next_Cam"
+                        android:src="@drawable/next_que"></ImageView>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_marginTop="25dp"
+            android:id="@+id/back_assess"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:adjustViewBounds="true"
+            android:onClick="training_Back"
+            android:paddingTop="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/back2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/assess_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rellay1"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/border_curve3"
+        android:padding="10dp">
+
+
+        <LinearLayout
+            android:id="@+id/que_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="3dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Name"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/exercise_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:text="Loading ..!"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Space
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@xml/circle" />
+
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Difficulty"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/dificult_lvl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:text="Loading ..!"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Space
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@xml/circle" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/breaker_info"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white" />
+
+
+            <TextView
+                android:id="@+id/assess_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/breaker_info"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="Featured Exercise"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/breaker_ques"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white" />
+            <!--                android:background="@color/white"-->
+
+            <EditText
+                android:id="@+id/step_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/steps_border"
+                android:drawableStart="@drawable/steps"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="#1"
+                android:padding="16dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <EditText
+                android:id="@+id/step_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/steps_border"
+                android:drawableStart="@drawable/steps"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="#2"
+                android:padding="16dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/step_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/steps_border"
+                android:drawableStart="@drawable/steps"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="#3"
+                android:padding="16dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <EditText
+                android:id="@+id/step_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/steps_border"
+                android:drawableStart="@drawable/steps"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="#4"
+                android:padding="16dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

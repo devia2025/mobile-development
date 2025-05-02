@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Extra.FoodDetails"
+    android:background="@xml/welcome_bg"
+    android:padding="5dp"
+    android:orientation="vertical"
+   >
+<!--    @drawable/round_border3-->
+    <ProgressBar
+        android:layout_marginTop="150dp"
+        android:id="@+id/progressBar_Article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@xml/progress_bg"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.146" />
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_marginTop="15sp"
+        android:id="@+id/Relative_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:id="@+id/article_relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/article_back"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round_border9"
+            android:gravity="center">
+
+            <ImageView
+                android:visibility="gone"
+                android:background="@drawable/round_outline"
+                tools:ignore="MissingConstraints"
+                android:scaleType="fitXY"
+                android:id="@+id/image_article"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
+                android:adjustViewBounds="true"
+                android:padding="3dp"
+                />
+
+
+            <FrameLayout
+                android:id="@+id/video_article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="9dp"
+                android:visibility="gone">
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:layout_below="@+id/tittle_article"
+                    android:id="@+id/youtube_player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+<!--                <com.official.talaka.More.FullScreenVideoView-->
+<!--                    android:id="@+id/video"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent" />-->
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+<!--        <com.example.jean.jcplayer.view.JcPlayerView-->
+<!--            android:visibility="gone"-->
+<!--            android:id="@+id/jcplayer"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/article_relative"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:outlineAmbientShadowColor="#999999"-->
+<!--            android:outlineSpotShadowColor="#999999"-->
+<!--            app:next_icon_color="@color/talaka_background"-->
+<!--            app:pause_icon_color="#999999"-->
+<!--            app:play_icon_color="#999999"-->
+<!--            app:previous_icon_color="@color/talaka_background"-->
+<!--            app:progress_color="#999999"-->
+<!--            app:random_icon_color="@color/talaka_background"-->
+<!--            app:repeat_icon_color="#999999"-->
+<!--            app:repeat_one_icon_color="#999999"-->
+<!--            app:seek_bar_color="#999999"-->
+<!--            app:text_audio_current_duration_color="#999999"-->
+<!--            app:text_audio_duration_color="#999999"-->
+<!--            app:text_audio_title_color="@color/white" />-->
+
+        <ImageView
+            android:id="@+id/article_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true"
+            android:onClick="Back"
+            android:paddingTop="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/back2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:onClick="Like"
+            android:visibility="gone"
+            android:id="@+id/like"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="15dp"
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_like" />
+
+        <TextView
+            android:id="@+id/tittle_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:text="Video"
+            android:textColor="#999999"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:visibility="gone"
+        android:background="@drawable/round_border9"
+        android:layout_marginBottom="45dp"
+        android:id="@+id/Scroll_article"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:padding="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/food_details_animation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/useless"></TextView>
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Subject"
+                android:textColor="#FFD700"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/useless" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                android:orientation="horizontal"
+                android:id="@+id/rating_linear"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <RatingBar
+                    android:numStars="5"
+                    android:theme="@style/RatingBar"
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/name"
+                    app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:textColor="#FFD700"
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="0.0"
+                    app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+                    app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                    app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <!--        <TextView-->
+            <!--            android:textStyle="bold"-->
+            <!--            android:id="@+id/price"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginStart="16dp"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:fontFamily="@font/poppinsbold"-->
+            <!--            android:text=""-->
+            <!--            android:textColor="#ffffff"-->
+            <!--            android:textSize="30sp"-->
+            <!--            app:layout_constraintStart_toStartOf="parent"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />-->
+
+            <TextView
+                android:textColor="#ffffff"
+                android:id="@+id/about_food"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppinsbold"
+                android:lineSpacingExtra="2dp"
+                android:text="Description"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/rating_linear"
+                app:layout_constraintTop_toBottomOf="@+id/rating_linear" />
+
+<!--            <TextView-->
+<!--                android:visibility="gone"-->
+<!--                android:id="@+id/item_id"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:fontFamily="@font/poppinsbold"-->
+<!--                android:lineSpacingExtra="2dp"-->
+<!--                android:text=""-->
+<!--                android:textSize="16sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/about_food"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/about_food" />-->
+
+
+<!--            <Button-->
+<!--                android:onClick="Back"-->
+<!--                android:id="@+id/button"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:background="@drawable/grad"-->
+<!--                android:fontFamily="@font/poppinsbold"-->
+<!--                android:text="Back"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textSize="18sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.444"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/about_food"-->
+<!--                app:layout_constraintVertical_bias="0.11" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
