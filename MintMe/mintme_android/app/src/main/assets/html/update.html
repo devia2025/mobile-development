@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #252525;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FFD700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #FFC300;
+        }
+    </style>
+</head>
+<body>
+    <img src="file:///android_asset/images/mintMe_logo.svg" alt="Mintme Icon" height="30">
+    <h1>You are using an old version</h1>
+    <p>Please update our app from Google Play</p>
+    <button class="btn" onclick="updateApp()">Update</button>
+    <script>
+        function updateApp() {
+            if (window.Android) {
+                window.Android.updateApp();
+            }
+        }
+    </script>
+</body>
+</html>
