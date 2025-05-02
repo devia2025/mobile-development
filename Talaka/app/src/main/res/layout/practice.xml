@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Practice"
+    android:background="@drawable/round_border4">
+<!--    android:background="@color/talaka_background">-->
+
+    <ImageView
+        android:id="@+id/practice_back"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:adjustViewBounds="true"
+        android:onClick="Practice_Back"
+        android:paddingTop="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    <TextView
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:id="@+id/talaka_Practice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:text="TALAKA"
+        android:textColor="@color/talaka_color"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:visibility="gone"
+        android:onClick="Call"
+        android:id="@+id/practice_call"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="75dp"
+        android:fontFamily="@font/poppinsbold"
+        android:background="@xml/rounded_rectangle"
+        android:text="Call"
+        android:textColor="@color/followersBg"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/talaka_Practice" />
+
+
+    <Button
+        android:visibility="gone"
+        android:onClick="Recieve"
+        android:id="@+id/practice_recieve"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Online"
+        android:background="@xml/rounded_rectangle"
+        android:textColor="@color/followersBg"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/practice_call" />
+
+    <Button
+        android:visibility="gone"
+        android:onClick="Article"
+        android:id="@+id/practice_article"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Article"
+        android:background="@xml/rounded_rectangle"
+        android:textColor="@color/followersBg"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/practice_recieve" />
+
+
+    <com.google.android.gms.ads.AdView
+        android:layout_marginBottom="10dp"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ads_practice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7549315536694796/1712474051">
+    </com.google.android.gms.ads.AdView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

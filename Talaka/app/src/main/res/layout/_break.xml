@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Activity.Break"
+android:background="@xml/grad"
+android:orientation="vertical"
+android:keepScreenOn="true">
+
+<RelativeLayout
+    android:id="@+id/main_break"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/talaka_background"
+    android:paddingBottom="20dp"
+    tools:ignore="MissingConstraints">
+
+
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_marginTop="150dp"
+        android:id="@+id/progressBar_break"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@xml/progress_bg"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.146" />
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/article_relative"
+        android:layout_width="343dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/article_back"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_border9"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image_break"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginBottom="9dp"
+            android:adjustViewBounds="true"
+            android:padding="3dp"
+            android:scaleType="centerInside"
+            android:visibility="gone" />
+
+
+        <FrameLayout
+            android:id="@+id/video_break_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:visibility="gone">
+
+            <com.official.talaka.More.FullScreenVideoView
+                android:id="@+id/video_break"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+    <com.example.jean.jcplayer.view.JcPlayerView
+        android:visibility="gone"
+        android:id="@+id/jcplayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/article_relative"
+        android:layout_marginTop="15dp"
+        android:outlineAmbientShadowColor="#999999"
+        android:outlineSpotShadowColor="#999999"
+        app:next_icon_color="@color/talaka_background"
+        app:pause_icon_color="#999999"
+        app:play_icon_color="#999999"
+        app:previous_icon_color="@color/talaka_background"
+        app:progress_color="#999999"
+        app:random_icon_color="@color/talaka_background"
+        app:repeat_icon_color="#999999"
+        app:repeat_one_icon_color="#999999"
+        app:seek_bar_color="#999999"
+        app:text_audio_current_duration_color="#999999"
+        app:text_audio_duration_color="#999999"
+        app:text_audio_title_color="@color/white" />
+
+    <ImageView
+        android:id="@+id/article_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:adjustViewBounds="true"
+        android:onClick="break_Back"
+        android:paddingTop="15dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tittle_break"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:paddingTop="15dp"
+        android:text="Break"
+        android:textColor="@color/followersBg"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+</RelativeLayout>
+
+
+<ScrollView
+    android:id="@+id/scrole_break"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/round_border3"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/topic_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:text="Loading .. Please Wait?"
+            android:textColor="#fffafa"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <com.google.android.gms.ads.AdView
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ads_article"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-7549315536694796/1712474051">
+        </com.google.android.gms.ads.AdView>
+
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_signup"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#999999"
+        app:cardCornerRadius="50dp">
+
+        <RelativeLayout
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:visibility="invisible"
+                android:layout_toLeftOf="@id/label_signup_login"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/ProgressBar_signup"
+                android:indeterminate="true"
+                android:indeterminateTint="@android:color/white"
+                android:indeterminateTintMode="src_in"
+                android:fontFamily="@font/poppinsbold"
+                >
+            </ProgressBar>
+
+            <TextView
+                android:fontFamily="@font/poppinsbold"
+                android:layout_centerInParent="true"
+                android:id="@+id/label_signup_login"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text=""
+                android:textSize="20dp">
+            </TextView>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

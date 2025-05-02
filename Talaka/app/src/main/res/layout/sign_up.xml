@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SignUp"
+>
+<!--        android:background="@drawable/round_border4"-->
+
+
+    <WebView
+        android:visibility="gone"
+        android:id="@+id/signup_msg"
+        android:layout_width="205dp"
+        android:layout_height="233dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="158dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="212dp"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <EditText
+        android:textColor="@color/talaka_background"
+        android:inputType="number"
+        android:id="@+id/password_register"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edittext_background"
+        android:drawableStart="@drawable/password"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Password"
+        android:textColorHint="@color/talaka_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_register"></EditText>
+
+
+
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/top_background1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:padding="5sp"
+        android:id="@+id/welcome_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create\nAccount"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="45sp"
+        android:textColor="@color/followersBg"/>
+
+    <EditText
+        android:textColor="@color/talaka_background"
+        android:textSize="18sp"
+        android:textColorHint="@color/talaka_background"
+        android:hint="Email"
+        android:drawablePadding="16dp"
+        android:drawableStart="@drawable/email"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:id="@+id/email_register"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_label"></EditText>
+
+    <ImageView
+        android:onClick="Signup"
+        android:id="@+id/register_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_register"
+        app:srcCompat="@drawable/btn_arraw1" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_btn">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            style="@android:style/Widget.Button"
+            android:layout_width="0dp"
+            android:layout_height="53dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/btn_layout"
+            android:drawableEnd="@drawable/facebook"
+            android:padding="16dp"
+            android:text="Facebook"
+            android:textColor="#3b608c"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2"
+            style="@android:style/Widget.Button"
+            android:layout_width="0dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/btn_layout"
+            android:drawableEnd="@drawable/google"
+            android:padding="16dp"
+            android:text="Google"
+            android:textColor="#3b608c"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/register_bottom"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot your password? "
+            android:textColor="@color/talaka_background"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/recovery"
+            android:onClick="Recovery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recovery it."
+            android:textColor="@color/followersBg"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:onClick="Back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

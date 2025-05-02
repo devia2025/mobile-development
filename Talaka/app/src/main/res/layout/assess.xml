@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Assess"
+    android:background="@drawable/round_border4">
+<!--    android:background="@color/talaka_background"-->
+<!--  >-->
+
+
+    <RelativeLayout
+        android:id="@+id/rellay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@xml/grad"
+        android:paddingBottom="5dp">
+
+        <RelativeLayout
+            android:id="@+id/imgUser"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_below="@+id/back_assess"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_border9">
+
+
+            <ImageView
+                android:id="@+id/quiz_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/image" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/previous_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgUser"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/que_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="que_back"
+                        android:src="@drawable/prev_que"></ImageView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/assess_que_number"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="Loading ..!"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/que_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="que_next"
+                        android:src="@drawable/next_que"></ImageView>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/back_assess"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="-5dp"
+            android:adjustViewBounds="true"
+            android:onClick="assess_log"
+            android:paddingTop="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/logs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/back_assess"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/Que_Type"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:adjustViewBounds="true"
+            android:onClick="Assess_Back"
+            android:paddingTop="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/back2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Que_Type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text=""
+            android:textColor="@color/followersBg"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Que_Type"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/followersBg"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/assess_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rellay1"
+        android:padding="3dp">
+
+        <FrameLayout
+            android:id="@+id/video_article_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:background="@drawable/round_border9">
+
+            <LinearLayout
+                android:id="@+id/que_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Total Questions"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/last_question"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:text="Loading ..!"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <Space
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@xml/circle" />
+
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Streak Rate (%)"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/streak_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:text="Loading ..!"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <Space
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@xml/circle" />
+
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Progress Rate (%)"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/question_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:maxLength="30"
+                            android:text="Loading ..!"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <Space
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@xml/circle" />
+
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+
+
+                <View
+                    android:id="@+id/breaker_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/white" />
+
+
+                <TextView
+                    android:id="@+id/assess_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/breaker_info"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:text="Loading ..!"
+                    android:textColor="#16a6ff"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+
+                <View
+                    android:id="@+id/breaker_ques"
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/white" />
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/answers_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/breaker_ques"
+                    android:layout_marginBottom="15dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/answer_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
+                        android:onClick="btn1"
+                        android:text="Loading ..!"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:onClick="btn2"
+                        android:id="@+id/answer_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/answer_1"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
+                        android:text="Loading ..!"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/answer_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/answer_2"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
+                        android:text="Loading ..!"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/answer_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/answer_3"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
+                        android:text="Loading ..!"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_below="@+id/answer_4"
+                        android:id="@+id/linear_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:visibility="gone"
+                            android:layout_weight="1"
+                            android:onClick="Confirm"
+                            android:id="@+id/Checking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/checking" />
+
+<!--                        <View-->
+<!--                            android:layout_width="5dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="@android:color/transparent" />-->
+
+
+
+<!--                        <com.github.zagum.speechrecognitionview.RecognitionProgressView-->
+<!--                            android:id="@+id/recognition_view"-->
+<!--                            android:adjustViewBounds="true"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_width="42dp"-->
+<!--                            android:layout_height="42dp"-->
+<!--                            android:layout_weight="1"-->
+
+<!--                            android:scaleType="centerInside"-->
+<!--                            />-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_below="@+id/linear_confirm"
+                        android:id="@+id/linear_mic_speak"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:visibility="gone"
+                            android:layout_weight="1"
+                            android:id="@+id/Mic_assess"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/mic" />
+
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent" />
+
+
+                        <ImageView
+                            android:visibility="gone"
+                            android:layout_weight="1"
+                            android:onClick="Listen"
+                            android:id="@+id/speak_assess"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/speak" />
+
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+
+
+                <com.google.android.gms.ads.AdView
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/ads_assess"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    ads:layout_constraintBottom_toBottomOf="parent"
+                    ads:layout_constraintEnd_toEndOf="parent"
+                    ads:layout_constraintStart_toStartOf="parent"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-7549315536694796/1712474051">
+                </com.google.android.gms.ads.AdView>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+</RelativeLayout>

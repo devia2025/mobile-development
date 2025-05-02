@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.official.talaka">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="ADMOB_ALLOW_LOCATION_FOR_ADS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <intent>
+            <action android:name="android.speech.extra.DICTATION_MODE" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Activity.Articles"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Extra.FoodDetails"
+            android:exported="false"
+            android:label="@string/title_activity_forgot"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.Forgot"
+            android:exported="false"
+            android:label="@string/title_activity_forgot"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.Verification"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.Break"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.Assess_Log"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Assess"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Recieve"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.User_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Call"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Article"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Practice"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.History_Log"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Home"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Login"
+            android:exported="false" />
+        <activity
+            android:name=".Splash"
+            android:exported="true">
+
+            <!-- <meta-data -->
+            <!-- android:name="com.google.android.gms.ads.APPLICATION_ID" -->
+            <!-- android:value="ca-app-pub-3940256099942544~3347511713"/> -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".More.ForegroundService"
+            android:enabled="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:stopWithTask="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7549315536694796~7143529632" />
+    </application>
+
+</manifest>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.History_Log"
+    android:orientation="vertical"
+    android:background="@drawable/round_border4"
+    android:padding="20dp">
+    <!-- Editext for Search -->
+    <!--    android:background="@color/purple_500"-->
+    <!-- Editext for Search -->
+
+
+    <ImageView
+
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="25sp"
+        android:adjustViewBounds="true"
+        android:onClick="back"
+        android:scaleType="centerInside"
+        android:src="@drawable/back2" />
+
+    <EditText
+        android:id="@+id/inputSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/back"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/round_border"
+        android:gravity="center"
+        android:hint="Loading .."
+        android:inputType="textVisiblePassword"
+        android:textColor="#ffffff"
+        android:textColorHint="@color/followersBg" />
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/inputSearch"
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:dividerHeight="5dp"
+        android:textColor="#ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/inputSearch"></ListView>
+
+
+</RelativeLayout>

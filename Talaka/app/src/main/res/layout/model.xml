@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="7dp"
+    card_view:cardElevation="5dp"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:background="@drawable/round_border4"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      >
+
+        <ImageView
+            android:id="@+id/spacecraftImageView"
+            android:layout_width="91dp"
+            android:layout_height="73dp"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:src="@drawable/image" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/spacecraftImageView"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textSize="15dp"
+            android:id="@+id/propellantTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/spacecraftImageView"
+            android:layout_toRightOf="@+id/spacecraftImageView"
+            android:padding="5dp"
+            android:text="Loading..!"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/followersBg" />
+
+
+        <TextView
+            android:id="@+id/myCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="Status"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/followersBg" />
+
+        <TextView
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toLeftOf="@+id/myCheckBox"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_alignBottom="@+id/spacecraftImageView"
+            android:layout_marginBottom="3dp"
+            />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
