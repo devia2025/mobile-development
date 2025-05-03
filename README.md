@@ -1,6 +1,7 @@
 # mobile-development
-mobile projects
 
-MintMe: Mintme.com simple webview
-Tmrnty: Fitness App
-Talaka: Learn English App
+### Projects
+
+- [MintMe](./MintMe) : mintme.com simple webview (android, ios)
+- [Talaka](./Talaka) : Learn English app.
+- [Tmrnty](./Tmrnty) : Fitness App.
