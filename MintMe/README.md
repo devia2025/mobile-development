@@ -8,19 +8,24 @@ Requirements:
 - Android App: (Android Studio + JDK 23)
 - iOS App: (Xcode 15)
 
-## 1. Requirements
+## 1. Store
+
+- Android App: [Google Play](https://play.google.com/store/apps/details?id=com.official.mintme)
+- IOS App: [App Store]()
+
+## 2. Requirements
 
 - Android App: [Android Studio](https://developer.android.com/studio/), [JDK23](https://www.oracle.com/java/technologies/downloads/#jdk23-windows)
 - IOS App: [Xcode15](https://developer.apple.com/xcode/) (login to download)
 
 
-## 2. Clone Reposotory
+## 3. Clone Reposotory
 ```sh
 git clone ssh://git@gitlab.abchosting.org:2279/abc-hosting/cryptocurrencies/mintme/mintme-mobile-app.git
 cd mintme-mobile-app
 ```
 
-## 3. Setup
+## 4. Setup
 
 #### Android
 
